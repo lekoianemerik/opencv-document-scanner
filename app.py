@@ -4,8 +4,8 @@ from PIL import Image
 import utils
 
 # Path to store uploaded image.
-image_path = 'uploaded_image.jpg'
-modified_path = 'modified_image.jpg'
+image_path = 'images/uploaded_image.jpg'
+modified_path = 'images/transformed_image.jpg'
 
 # Function block to handle image upload and deletion.
 def show_uploaded_file(uploaded_file, image_path):
@@ -14,7 +14,7 @@ def show_uploaded_file(uploaded_file, image_path):
     with open(image_path, 'wb') as f:
         f.write(uploaded_file.getbuffer())
     
-    utils.gray_it_up(image_path=image_path)
+        utils.scan(image_path=image_path)
 
     # Display the image.
     st.image(image_path)
